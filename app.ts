@@ -1,15 +1,26 @@
-function myFunc(value1: number | string, value2: number | string) {
-  if (typeof value1 === "number" && typeof value2 === "number") {
-    return value1 + value2;
-  } else {
-    return value1.toString() + value2.toString();
-  }
+function greet(name: string): string {
+  return "Hello, " + name + "!";
 }
 
-console.log("numbers: ", myFunc(1, 2));
+console.log(greet("Sasha"));
 
-console.log("strings: ", myFunc(1, "2"));
+// function sayHello(): void {
+//   console.log("Hello, World!");
+// }
 
+// sayHello();
+// function myFunc(value1: number | string, value2: number | string) {
+//   if (typeof value1 === "number" && typeof value2 === "number") {
+//     return value1 + value2;
+//   } else {
+//     return value1.toString() + value2.toString();
+//   }
+// }
+
+// console.log("numbers: ", myFunc(1, 2));
+// console.log("strings: ", myFunc(1, "2"));
+
+// console.log(myFunc("3", 4));
 // enum Status {
 //   Pending = 1,
 //   InProgress = 2,
