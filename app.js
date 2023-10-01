@@ -1,18 +1,27 @@
-var Status;
-(function (Status) {
-    Status[Status["Pending"] = 0] = "Pending";
-    Status[Status["InProgress"] = 1] = "InProgress";
-    Status[Status["Completed"] = 2] = "Completed";
-})(Status || (Status = {}));
+function myFunc(value1, value2) {
+    if (typeof value1 === "number" && typeof value2 === "number") {
+        return value1 + value2;
+    }
+    else {
+        return value1.toString() + value2.toString();
+    }
+}
+console.log("numbers: ", myFunc(1, 2));
+console.log("strings: ", myFunc(1, "2"));
+// enum Status {
+//   Pending = 1,
+//   InProgress = 2,
+//   Completed = 3,
+// }
 // console.log("Pending: ", Status.Pending); // 0
 // console.log("InProgress: ", Status.InProgress); // 1
 // console.log("Completed: ", Status.Completed); // 2
-var operation = {
-    status: Status.Pending,
-};
-if (operation.status === Status.Pending) {
-    console.log("Current operation status: ", Status.Pending);
-}
+// const operation = {
+//   status: Status.Pending,
+// };
+// if (operation.status === Status.Pending) {
+//   console.log("Current operation status: ", Status.Pending);
+// }
 // let dynamicValue: any;
 // // dynamicValue = { name: "Alex" };
 // let a = dynamicValue.name;
