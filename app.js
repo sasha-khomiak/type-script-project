@@ -1,6 +1,4 @@
-"use strict";
-// type Book = import("./types").Book;
-Object.defineProperty(exports, "__esModule", { value: true });
+// import { Book } from "./types";
 var currentBook = {
     id: 12345,
     bookName: "Sophie's World",
