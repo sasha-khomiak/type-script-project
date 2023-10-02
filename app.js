@@ -1,7 +1,39 @@
-function greet(name) {
-    return "Hello, " + name + "!";
-}
-console.log(greet("Sasha"));
+// import { Book } from "./types";
+var currentBook = {
+    id: 12345,
+    bookName: "Sophie's World",
+    bookAuthor: "Jostein Gaarder",
+    bookPrice: 4.49,
+    cathegory: ["philosophy", "history"],
+    inStock: true,
+    details: {
+        review: "The international bestseller about life, the universe and everything.",
+        date: new Date(),
+    },
+};
+console.log("currentBook", currentBook);
+// function mathFunc(
+//   num1: number,
+//   num2: number,
+//   callback: (arg1: number, arg2: number) => number
+// ): void {
+//   console.log("result", callback(num1, num2));
+// }
+// mathFunc(1, 2, (a, b) => a + b);
+// mathFunc(7, 3, (a, b) => a - b);
+// let printFunc: (item: number) => void;
+// printFunc = (item) => {
+//   console.log("item: ", item);
+// };
+// printFunc(1);
+// let addFunction: (a: number, b: number) => number;
+// addFunction = (a, b) => a + b;
+// console.log(addFunction("1", "4"));
+// console.log(addFunction(1, 4));
+// function greet(name: string): string {
+//   return "Hello, " + name + "!";
+// }
+// console.log(greet("Sasha"));
 // function sayHello(): void {
 //   console.log("Hello, World!");
 // }
