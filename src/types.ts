@@ -1,4 +1,4 @@
-type Book = {
+export type Book = {
   id: number;
   bookName: string;
   bookAuthor: string;
@@ -12,4 +12,4 @@ type Book = {
   };
 };
 
-export type { Book };
+// export type { Book };
