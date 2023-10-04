@@ -11,5 +11,3 @@ export type Book = {
     imgCover?: string;
   };
 };
-
-// export type { Book };
