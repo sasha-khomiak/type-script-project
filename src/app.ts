@@ -1,28 +1,40 @@
 class Car {
-  // Властивості класу (змінні)
-  brand: string;
-  model: string;
-  year: number;
+  private speed: number; // Приватна властивість
+  public brand: string; // Публічна властивість
+  protected model: string; // Захищена властивість
 
-  // Конструктор класу
-  constructor(brand: string, model: string, year: number) {
+  constructor(brand: string, model: string) {
     this.brand = brand;
     this.model = model;
-    this.year = year;
+    this.speed = 0;
   }
 
-  // Метод класу (функція)
-  displayInfo(): string {
-    return `Це ${this.year} ${this.brand} ${this.model}.`;
+  // Публічний метод для отримання швидкості
+  getSpeed(): number {
+    return this.speed;
+  }
+
+  // Приватний метод для встановлення швидкості
+  private setSpeed(speed: number): void {
+    this.speed = speed;
+  }
+
+  // Захищений метод для відображення інформації про автомобіль
+  protected displayInfo(): string {
+    return `Це ${this.brand} ${this.model}. Швидкість: ${this.speed} км/год.`;
   }
 }
 
-// Створення об'єкта класу Car
-let myCar1 = new Car("Toyota", "Corolla", 2021);
-let myCar2 = new Car("Ford", "EDGE", 2019);
+// Створення екземляру
+let myCar = new Car("Toyota", "Corolla");
 
-// Виклик методу об'єкта
-console.log(myCar1.displayInfo()); // Виведе "Це 2021 Toyota Corolla."
-console.log(myCar2.displayInfo()); // Виведе "Це 2019 Ford EDGE."
+console.log("myCar: ", myCar);
 
-console.log("myCar1", myCar1);
+// Спроба доступу до властивостей
+// console.log("direct get speed: ", myCar.speed);
+console.log("direct get brand: ", myCar.brand);
+// console.log("direct get model: ", myCar.model);
+
+console.log("speed from public method: ", myCar.getSpeed());
+// myCar.setSpeed(50); // Помилка: метод приватний і не може бути викликаний за межами класу
+// myCar.displayInfo(); // Помилка: метод захищений і не може бути викликаний за межами класу
