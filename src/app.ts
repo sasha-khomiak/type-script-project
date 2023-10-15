@@ -1,40 +1,35 @@
-class Car {
-  private speed: number; // Приватна властивість
-  public brand: string; // Публічна властивість
-  protected model: string; // Захищена властивість
+// Клас фрукту
+class Fruit {
+  public name: string;
 
-  constructor(brand: string, model: string) {
-    this.brand = brand;
-    this.model = model;
-    this.speed = 0;
+  constructor(name) {
+    this.name = name;
   }
 
-  // Публічний метод для отримання швидкості
-  getSpeed(): number {
-    return this.speed;
-  }
-
-  // Приватний метод для встановлення швидкості
-  private setSpeed(speed: number): void {
-    this.speed = speed;
-  }
-
-  // Захищений метод для відображення інформації про автомобіль
-  protected displayInfo(): string {
-    return `Це ${this.brand} ${this.model}. Швидкість: ${this.speed} км/год.`;
+  // Метод для виведення імені фрукту
+  showName() {
+    console.log(`Це фрукт: ${this.name}`);
   }
 }
 
-// Створення екземляру
-let myCar = new Car("Toyota", "Corolla");
+// Клас квітки
+class Flower {
+  public name: string;
 
-console.log("myCar: ", myCar);
+  constructor(name) {
+    this.name = name;
+  }
 
-// Спроба доступу до властивостей
-// console.log("direct get speed: ", myCar.speed);
-console.log("direct get brand: ", myCar.brand);
-// console.log("direct get model: ", myCar.model);
+  // Метод для виведення імені квітки
+  showName() {
+    console.log(`Це квітка: ${this.name}`);
+  }
+}
 
-console.log("speed from public method: ", myCar.getSpeed());
-// myCar.setSpeed(50); // Помилка: метод приватний і не може бути викликаний за межами класу
-// myCar.displayInfo(); // Помилка: метод захищений і не може бути викликаний за межами класу
+// Створення об'єктів класів Fruit і Flower
+const apple = new Fruit("Яблуко");
+const rose = new Flower("Троянда");
+
+// Приклад поліморфізму
+apple.showName();
+rose.showName();
