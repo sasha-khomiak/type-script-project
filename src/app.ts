@@ -1,35 +1,19 @@
-// Клас фрукту
-class Fruit {
-  public name: string;
+class Person {
+  name: string;
 
-  constructor(name) {
+  // Конструктор класу Person
+  constructor(name: string) {
     this.name = name;
   }
 
-  // Метод для виведення імені фрукту
-  showName() {
-    console.log(`Це фрукт: ${this.name}`);
+  // Метод класу для виведення імені
+  getName(): string {
+    return this.name;
   }
 }
 
-// Клас квітки
-class Flower {
-  public name: string;
+// Створення нового об'єкта класу Person
+let person = new Person("John");
 
-  constructor(name) {
-    this.name = name;
-  }
-
-  // Метод для виведення імені квітки
-  showName() {
-    console.log(`Це квітка: ${this.name}`);
-  }
-}
-
-// Створення об'єктів класів Fruit і Flower
-const apple = new Fruit("Яблуко");
-const rose = new Flower("Троянда");
-
-// Приклад поліморфізму
-apple.showName();
-rose.showName();
+// Виклик методу класу
+console.log(person.getName()); // Виведе "John"
