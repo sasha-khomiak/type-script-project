@@ -1,27 +1,17 @@
-class MyClass {
-  private someMsg: string = "Hello";
+class Circle {
+  readonly radius: number;
 
-  showMsg() {
-    console.log(this.someMsg);
+  constructor(radius: number) {
+    this.radius = radius;
   }
 
-  editMsg(txt) {
-    this.someMsg = txt;
+  calculateArea(): number {
+    return Math.PI * this.radius * this.radius;
   }
 }
 
-let myObj = new MyClass();
+let circle = new Circle(5);
+console.log(circle.radius); // Виведе 5
 
-myObj.showMsg();
-myObj.editMsg("My name is Sasha");
-myObj.showMsg();
-
-// myObj.someMsg = "My name is Sasha";
-
-// class ChildClass extends ParentClass {}
-
-// let objFromParentClass = new ParentClass();
-// let objFromChildClass = new ChildClass();
-
-// objFromParentClass.showMsg();
-// objFromChildClass.showMsg();
+// Спроба змінити значення radius призведе до помилки
+// circle.radius = 10; // Помилка: властивість "radius" тільки для читання
