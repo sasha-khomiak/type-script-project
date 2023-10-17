@@ -1,33 +1,29 @@
-// Базовий клас (суперклас)
-class Animal {
-    constructor(name) {
+class Person {
+    constructor(name, surname) {
         this.name = name;
+        this.surname = surname;
     }
-    // Метод базового класу
-    makeSound() {
-        console.log("Some sound");
+    // Setter для встановлення значення імені
+    set firstName(value) {
+        this.name = value;
+        console.log("Name is added/changed");
     }
-}
-// Підклас, який успадковує клас Animal
-class Dog extends Animal {
-    constructor(name, breed) {
-        // Виклик конструктора базового класу за допомогою super()
-        super(name);
-        this.breed = breed;
+    // Setter для встановлення значення прізвища
+    set secondName(value) {
+        this.surname = value;
+        console.log("Surname is added/changed");
     }
-    // Перевизначений метод базового класу
-    makeSound() {
-        console.log("Bark!");
-    }
-    // Новий метод підкласу
-    wagTail() {
-        console.log("Tail is wagging");
+    // Getter для отримання значення інформації про особу
+    get information() {
+        return this.name + " " + this.surname;
     }
 }
-// Створення об'єкта підкласу
-let myDog = new Dog("Buddy", "Golden Retriever");
-// Виклик методів базового та підкласів
-console.log(myDog.name); // Виведе "Buddy"
-console.log(myDog.breed); // Виведе "Golden Retriever"
-myDog.makeSound(); // Виведе "Bark!"
-myDog.wagTail(); // Виведе "Tail is wagging"
+// Створення об'єкта класу Person
+let person = new Person("Isaak", "Newton");
+// Використання Getter для отримання імені особи
+console.log(person.information); // Виведе Isaak Newton
+// Використання Setter для встановлення нового значення імені і прізвища
+person.firstName = "Oleksandr";
+person.secondName = "Khomiak";
+// Використання Getter для отримання оновленого імені особи
+console.log(person.information); // Виведе Oleksandr Khomiak

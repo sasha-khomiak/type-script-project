@@ -1,44 +1,39 @@
-// Базовий клас (суперклас)
-class Animal {
-  name: string;
+class Person {
+  private name?: string;
+  private surname?: string;
 
-  constructor(name: string) {
+  constructor(name?: string, surname?: string) {
     this.name = name;
+    this.surname = surname;
   }
 
-  // Метод базового класу
-  makeSound(): void {
-    console.log("Some sound");
-  }
-}
-
-// Підклас, який успадковує клас Animal
-class Dog extends Animal {
-  // Додаткова властивість підкласу
-  breed: string;
-
-  constructor(name: string, breed: string) {
-    // Виклик конструктора базового класу за допомогою super()
-    super(name);
-    this.breed = breed;
+  // Setter для встановлення значення імені
+  set firstName(value: string) {
+    this.name = value;
+    console.log("Name is added/changed");
   }
 
-  // Перевизначений метод базового класу
-  makeSound(): void {
-    console.log("Bark!");
+  // Setter для встановлення значення прізвища
+  set secondName(value: string) {
+    this.surname = value;
+    console.log("Surname is added/changed");
   }
 
-  // Новий метод підкласу
-  wagTail(): void {
-    console.log("Tail is wagging");
+  // Getter для отримання значення інформації про особу
+  get information(): string {
+    return this.name + " " + this.surname;
   }
 }
 
-// Створення об'єкта підкласу
-let myDog = new Dog("Buddy", "Golden Retriever");
+// Створення об'єкта класу Person
+let person = new Person("Isaak", "Newton");
 
-// Виклик методів базового та підкласів
-console.log(myDog.name); // Виведе "Buddy"
-console.log(myDog.breed); // Виведе "Golden Retriever"
-myDog.makeSound(); // Виведе "Bark!"
-myDog.wagTail(); // Виведе "Tail is wagging"
+// Використання Getter для отримання імені особи
+console.log(person.information); // Виведе Isaak Newton
+
+// Використання Setter для встановлення нового значення імені і прізвища
+person.firstName = "Oleksandr";
+person.secondName = "Khomiak";
+
+// Використання Getter для отримання оновленого імені особи
+console.log(person.information); // Виведе Oleksandr Khomiak
