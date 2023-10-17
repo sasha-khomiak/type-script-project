@@ -1,15 +1,22 @@
-class Person {
-    // Конструктор класу Person
-    constructor(name) {
-        this.name = name;
+class MyClass {
+    constructor() {
+        this.someMsg = "Hello";
     }
-    // Метод класу для виведення імені
-    getName() {
-        return this.name;
+    showMsg() {
+        console.log(this.someMsg);
+    }
+    editMsg(txt) {
+        this.someMsg = txt;
     }
 }
-// Створення нового об'єкта класу Person
-let person = new Person("John");
-// Виклик методу класу
-console.log(person.getName()); // Виведе "John"
+let myObj = new MyClass();
+myObj.showMsg();
+myObj.editMsg("My name is Sasha");
+myObj.showMsg();
+// myObj.someMsg = "My name is Sasha";
+// class ChildClass extends ParentClass {}
+// let objFromParentClass = new ParentClass();
+// let objFromChildClass = new ChildClass();
+// objFromParentClass.showMsg();
+// objFromChildClass.showMsg();
 //# sourceMappingURL=app.js.map
