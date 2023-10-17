@@ -1,29 +1,18 @@
-class Person {
-    constructor(name, surname) {
-        this.name = name;
-        this.surname = surname;
-    }
-    // Setter для встановлення значення імені
-    set firstName(value) {
-        this.name = value;
-        console.log("Name is added/changed");
-    }
-    // Setter для встановлення значення прізвища
-    set secondName(value) {
-        this.surname = value;
-        console.log("Surname is added/changed");
-    }
-    // Getter для отримання значення інформації про особу
-    get information() {
-        return this.name + " " + this.surname;
+class Shape {
+    // Звичайний метод з реалізацією
+    printArea() {
+        console.log("Площа фігури: " + this.calculateArea());
     }
 }
-// Створення об'єкта класу Person
-let person = new Person("Isaak", "Newton");
-// Використання Getter для отримання імені особи
-console.log(person.information); // Виведе Isaak Newton
-// Використання Setter для встановлення нового значення імені і прізвища
-person.firstName = "Oleksandr";
-person.secondName = "Khomiak";
-// Використання Getter для отримання оновленого імені особи
-console.log(person.information); // Виведе Oleksandr Khomiak
+class Circle extends Shape {
+    constructor(radius) {
+        super();
+        this.radius = radius;
+    }
+    // Реалізація абстрактного методу
+    calculateArea() {
+        return Math.PI * this.radius * this.radius;
+    }
+}
+let circle = new Circle(5);
+circle.printArea(); // Виведе "Площа фігури: 78.54"
