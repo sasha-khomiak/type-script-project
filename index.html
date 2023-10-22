@@ -21,6 +21,39 @@
         border: 10px solid black;
         box-sizing: border-box;
       }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .flex-container {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .card {
+        flex-basis: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        background-color: #dddddd;
+        padding: 5px;
+      }
+
+      .card-text {
+        background-color: #cccccc;
+        flex-grow: 1;
+      }
+
+      .card-header {
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+      }
     </style>
 
     <title>TypeScript Summ</title>
@@ -30,14 +63,25 @@
     <input type="text" name="number2" id="number2" />
     <button type="button" id="summ-btn">Summ</button>
 
-    <ul class="list">
-      <li class="list-item">
-        <img srs="/img/image-1.jpg" alt="object-1" class="list-image" />
-      </li>
-      <li class="list-item">
-        <img srs="/img/image-2.jpg" alt="object-2" class="list-image" />
-      </li>
-    </ul>
+    <div class="flex-container">
+      <div class="card">
+        <p class="card-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+          debitis illum earum maiores tempore excepturi.
+        </p>
+        <h3 class="card-header">Some header of 1 card</h3>
+      </div>
+
+      <div class="card">
+        <p class="card-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+          debitis illum earum maiores tempore excepturi. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Itaque debitis illum earum maiores
+          tempore excepturi.
+        </p>
+        <h3 class="card-header">Some header of 2 card</h3>
+      </div>
+    </div>
 
     <script src="./dist/app.js" type="module"></script>
   </body>
