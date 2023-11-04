@@ -14,45 +14,25 @@
 
     <style>
       .box {
-        width: 200px;
-        height: 200px;
-        padding: 20px;
-        margin: 50px;
-        border: 10px solid black;
-        box-sizing: border-box;
-      }
+        background-color: violet;
+        width: 100px;
+        height: 100px;
 
-      * {
-        box-sizing: border-box;
-      }
+        @media (min-width: 460px) {
+          background-color: blue;
+        }
 
-      .flex-container {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-      }
+        @media (min-width: 768px) {
+          background-color: red;
+        }
 
-      .card {
-        flex-basis: 250px;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
+        @media (min-width: 1024px) {
+          background-color: green;
+        }
 
-        background-color: #dddddd;
-        padding: 5px;
-      }
-
-      .card-text {
-        background-color: #cccccc;
-        flex-grow: 1;
-      }
-
-      .card-header {
-        background-color: blue;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        border-radius: 10px;
+        @media (min-width: 1200px) {
+          background-color: yellow;
+        }
       }
     </style>
 
@@ -63,27 +43,7 @@
     <input type="text" name="number2" id="number2" />
     <button type="button" id="summ-btn">Summ</button>
 
-    <div class="flex-container">
-      <div class="card">
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-          debitis illum earum maiores tempore excepturi.
-        </p>
-        <h3 class="card-header">Some header of 1 card</h3>
-      </div>
-
-      <div class="card">
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-          debitis illum earum maiores tempore excepturi. Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Itaque debitis illum earum maiores
-          tempore excepturi.
-        </p>
-        <h3 class="card-header">Some header of 2 card</h3>
-      </div>
-    </div>
-
-    <img src="./plus-ico.svg" />
+    <div class="box"></div>
 
     <script src="./dist/app.js" type="module"></script>
   </body>
