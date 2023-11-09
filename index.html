@@ -12,23 +12,7 @@
       rel="stylesheet"
     />
 
-    <style>
-      .box {
-        width: 628px;
-        height: 465px;
-        background-size: cover;
-
-        background-image: url("./people.png");
-
-        @media (min-device-pixel-ratio: 2),
-          (-webkit-min-device-pixel-ratio: 2),
-          (-o-min-device-pixel-ratio: 2/1),
-          (min-resolution: 192dpi),
-          (min-resolution: 2dppx) {
-          background-image: url("./people@2x.png");
-        }
-      }
-    </style>
+    <style></style>
 
     <title>TypeScript Summ</title>
   </head>
@@ -37,7 +21,11 @@
     <input type="text" name="number2" id="number2" />
     <button type="button" id="summ-btn">Summ</button>
 
-    <div class="box"></div>
+    <img
+      srcset="./people.png 1x, ./people@2x.png 2x"
+      src="./people.png"
+      alt="Люди"
+    />
 
     <script src="./dist/app.js" type="module"></script>
   </body>
