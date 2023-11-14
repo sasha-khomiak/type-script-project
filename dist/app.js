@@ -18,41 +18,39 @@
 
 // console.log(result);
 
-let day = 5;
-let dayName;
+const globalValue = "Global value";
 
-if (day === 1) {
-  dayName = "Понеділок";
-} else if (day === 2) {
-  dayName = "Вівторок";
-} else if (day === 3) {
-  dayName = "Середа";
-} else if (day === 4) {
-  dayName = "Четвер";
-} else if (day === 5) {
-  dayName = "П'ятниця";
-} else {
-  dayName = "Не відомо";
+console.log(globalValue); // "Global value"
+console.log(localValueA); // ReferenceError: localValueA is not defined
+console.log(localValueB); // ReferenceError: localValueB is not defined
+console.log(localValueC); // ReferenceError: localValueC is not defined
+
+// BLOCK A
+if (true) {
+  const localValueA = "Local value A";
+
+  console.log(globalValue); // "Global value"
+  console.log(localValueA); // "Local value A"
+  console.log(localValueB); // ReferenceError: localValueB is not defined
+  console.log(localValueC); // ReferenceError: localValueC is not defined
+
+  // BLOCK B
+  if (true) {
+    const localValueB = "Local value B";
+
+    console.log(globalValue); // "Global value"
+    console.log(localValueA); // "Local value A"
+    console.log(localValueB); // "Local value B"
+    console.log(localValueC); // ReferenceError: localValueC is not defined
+  }
 }
 
-//   switch (day) {
-//     case 1:
-//       dayName = "Понеділок";
-//       break;
-//     case 2:
-//       dayName = "Вівторок";
-//       break;
-//     case 3:
-//       dayName = "Середа";
-//       break;
-//     case 4:
-//       dayName = "Четвер";
-//       break;
-//     case 5:
-//       dayName = "П'ятниця";
-//       break;
-//     default:
-//       dayName = "Не відомо";
-//   }
+// BLOCK C
+if (true) {
+  const localValueC = "Local value C";
 
-console.log(dayName); // Виведе 'Вівторок', оскільки day === 2
+  console.log(globalValue); // "Global value"
+  console.log(localValueA); // ReferenceError: localValueA is not defined
+  console.log(localValueB); // ReferenceError: localValueB is not defined
+  console.log(localValueC); //  "Local value C"
+}
