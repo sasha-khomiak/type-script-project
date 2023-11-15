@@ -18,39 +18,35 @@
 
 // console.log(result);
 
-const globalValue = "Global value";
+// let password;
 
-console.log(globalValue); // "Global value"
-console.log(localValueA); // ReferenceError: localValueA is not defined
-console.log(localValueB); // ReferenceError: localValueB is not defined
-console.log(localValueC); // ReferenceError: localValueC is not defined
+// do {
+//   password = prompt("Enter your password");
+// } while (password.length < 6);
 
-// BLOCK A
-if (true) {
-  const localValueA = "Local value A";
+// console.log("Your password is: ", password);
 
-  console.log(globalValue); // "Global value"
-  console.log(localValueA); // "Local value A"
-  console.log(localValueB); // ReferenceError: localValueB is not defined
-  console.log(localValueC); // ReferenceError: localValueC is not defined
+// let summ = 0;
 
-  // BLOCK B
-  if (true) {
-    const localValueB = "Local value B";
+// for (let i = 0; i <= 4; i += 1) {
+//   console.log("Поточне значення лічильника: " + i);
+//   summ += i;
+// }
 
-    console.log(globalValue); // "Global value"
-    console.log(localValueA); // "Local value A"
-    console.log(localValueB); // "Local value B"
-    console.log(localValueC); // ReferenceError: localValueC is not defined
+// console.log("Сума: ", summ);
+
+// for (let i = 0; i < 10; i++) {
+//   if (i === 5) {
+//     break; // Припиняє виконання циклу, коли i дорівнює 5
+//   }
+//   console.log(i);
+// }
+
+// console.log("Log after loop");
+
+for (let i = 0; i < 5; i++) {
+  if (i === 2) {
+    continue; // Пропускає виконання решти коду блоку для i = 2
   }
-}
-
-// BLOCK C
-if (true) {
-  const localValueC = "Local value C";
-
-  console.log(globalValue); // "Global value"
-  console.log(localValueA); // ReferenceError: localValueA is not defined
-  console.log(localValueB); // ReferenceError: localValueB is not defined
-  console.log(localValueC); //  "Local value C"
+  console.log(i);
 }
