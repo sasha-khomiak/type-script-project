@@ -304,16 +304,16 @@
 //   console.log(user[key]); // На кожній ітерації виведе: "Alex", 30, ["electronics", "programming", "gym"]
 // }
 
-const car = {
-  wheels: 4,
-};
+// const car = {
+//   wheels: 4,
+// };
 
-const myCar = Object.create(car);
-myCar.model = "Audi";
-myCar.color = "red";
+// const myCar = Object.create(car);
+// myCar.model = "Audi";
+// myCar.color = "red";
 
-const result = Object.entries(myCar);
-console.log(result); // [['model', 'Audi'], ['color', 'red']]
+// const result = Object.entries(myCar);
+// console.log(result); // [['model', 'Audi'], ['color', 'red']]
 
 // for (const key of keys) {
 //   console.log(key);
@@ -339,3 +339,107 @@ console.log(result); // [['model', 'Audi'], ['color', 'red']]
 // }
 
 // console.log("total: ", total); // total: 16
+
+// Створення масиву об'єктів
+// const usersArray = [
+//   { name: "John", age: 30 },
+//   { name: "Anna", age: 25 },
+//   { name: "Mike", age: 35 },
+// ];
+
+// let total = 0;
+
+// for (const item of usersArray) {
+//   total += item.age;
+// }
+
+// let middleAge = total / usersArray.length;
+
+// console.log("middleAge: ", middleAge); //30
+
+// // Ітерація через масив об'єктів за допомогою циклу for...of
+// for (let item of usersArray) {
+//   console.log(`${item.name} - ${item.age} років`);
+// }
+
+// let array1 = [1, 2, 3];
+// let array2 = [...array1, 4, 5, 6];
+
+// console.log(array2); // Виведе: [1, 2, 3, 4, 5, 6]
+
+// let object1 = { a: 1, b: 2 };
+// let object2 = { c: 3, d: 4 };
+// let object3 = { a: 5, c: 6 };
+
+// let object4 = { ...object1, ...object2, ...object3 };
+// console.log(object4); // Виведе: {a: 5, b: 2, c: 6, d: 4}
+
+// let object5 = { ...object3, ...object2, ...object1 };
+// console.log(object5); // Виведе: {a: 1, b: 2, c: 3, d: 4}
+
+// function summ(a, b, c) {
+//   return a + b + c;
+// }
+
+// let numbers = [1, 2, 3];
+// let result = summ(...numbers);
+
+// console.log(result); // Виведе: 6
+
+// function myFunc(a, b, ...elseArgs) {
+//   console.log(a); // Виведе: 1
+//   console.log(b); // Виведе: 2
+//   console.log(elseArgs); // Виведе: [3, 4, 5]
+// }
+
+// myFunc(1, 2, 3, 4, 5);
+
+// const users = [
+//   { name: "Олександр", surname: "Хомяк" },
+//   { name: "Тарас", surname: "Шевченко" },
+//   { name: "Леся", surname: "Українка" },
+// ];
+
+// for (const { name, surname } of users) {
+//   console.log(name);
+//   console.log(surname);
+// }
+
+// const user = {
+//   name: "Олександр",
+//   surname: "Хомяк",
+// };
+
+// function myFunc({ name, surname }) {
+//   console.log(`${name} ${surname}`);
+// }
+
+// myFunc(user); // Олександр Хомяк
+
+// newFunction(); //["Mathew", "Michael", "Oliver"];
+
+// function newFunction() {
+//   const winners = ["Maria", "Alex", "Helga", "Mathew", "Michael", "Oliver"];
+
+//   const [, , , ...args] = winners;
+
+//   console.log(args);
+// }
+
+// function myFunc({ name, surname, age }) {
+//   console.log(`${name} ${surname} is ${age} old!`);
+// }
+
+// myFunc({
+//   name: "Олександр",
+//   surname: "Хомяк",
+//   age: 30,
+// });
+
+function myFunc() {
+  return "Hello";
+}
+
+console.log(myFunc());
+
+console.log(myFunc);
