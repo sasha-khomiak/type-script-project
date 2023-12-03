@@ -436,10 +436,294 @@
 //   age: 30,
 // });
 
-function myFunc() {
-  return "Hello";
-}
+// function myFunc() {
+//   return "Hello";
+// }
 
-console.log(myFunc());
+// console.log(myFunc());
 
-console.log(myFunc);
+// console.log(myFunc);
+
+// // 1 greeting callback function
+// function greeting(name) {
+//   console.log(`Hello, ${name}!`);
+// }
+
+// // 2 goodbye callback function
+// function goodbye(name) {
+//   console.log(`Good Bye, ${name}!`);
+// }
+
+// // Higher order function
+// function myFunc(callback, name) {
+//   callback(name);
+// }
+
+// // Виклик функції вищого порядку і передача колбек-функції і рядка
+// myFunc(greeting, "Sashko"); // Hello, Sashko!
+// myFunc(goodbye, "Sashko"); // Good Bye, Sashko!
+
+// // greeting callback function
+// function greeting(name) {
+//   console.log(`Hello, ${name}!`);
+// }
+
+// // Higher order function
+// function myFunc(callback, name) {
+//   callback(name);
+// }
+
+// // Виклик функції вищого порядку і передача інлайн колбек-функції і рядка
+// myFunc(function (name) {
+//   console.log(`Hello, ${name}!`);
+// }, "Sashko"); // Hello, Sashko!
+
+// // Колбек дозволу доступу
+// function approve(name) {
+//   console.log(`Вітаю! Вхід для ${name} дозволено!`);
+// }
+
+// // Колбек заборони доступу
+// function reject(name) {
+//   console.log(`На жаль! Вхід для ${name} заборонено!`);
+// }
+
+// // Функція вищого порядку, приймає рядок імені і дві колбек-функції
+// // Перша надаватиме доступ, а друга заборонятиме доступ
+// function myFunc(name, good, bad) {
+//   // імітація перевірки доступу користувача до сервісів
+//   let isAllowed = Math.random() >= 0.5;
+
+//   // Якщо дозволено доступ, то використовуємо першу колбек функцію
+//   if (isAllowed) {
+//     good(name);
+//     return;
+//   }
+
+//   // Якщо заборонено доступ, то використовуємо другу колбек функцію
+//   bad(name);
+// }
+
+// // Виклик функції вищого порядку і передача рядка і двох колбек-функцій
+// myFunc("Sashko", approve, reject); // рещультат задежить від того, що згенерується в isAllowed
+
+// // callback greeting function
+// function greeting(name) {
+//   console.log(`Hello, ${name}!`);
+// }
+
+// //  Higher order function
+// function multiGreeting(name, callback, number) {
+//   for (let i = 0; i < number; i += 1) {
+//     callback(name);
+//   }
+// }
+
+// multiGreeting("Alex", greeting, 6);
+
+// let numbers = [1, 2, 3, 4, 5];
+
+// numbers.forEach(function (element, index) {
+//   console.log(`Елемент ${element} має індекс ${index}`);
+// });
+
+// // classic function
+// function classicLove(name1, name2) {
+//   console.log(`${name1} + ${name2} = Love`);
+// }
+
+// classicLove("Alex", "Jenifer");
+
+// // arrow function
+// const arrowLove = (name1, name2) => {
+//   console.log(`${name1} + ${name2} = Love`);
+// };
+
+// arrowLove("Mathew", "Helga");
+
+// const colors = (...args) => {
+//   console.log(args);
+// };
+
+// colors("red", "blue", "green", "orange"); // ['red', 'blue', 'green', 'orange']
+
+// // Звичайна функція-колбек
+// let array1 = [1, 2, 3, 4, 5];
+
+// array1.forEach(function (el) {
+//   console.log(el);
+// });
+
+// Стрілкова функція-колбек
+
+// const array = [1, 2, 3, 4, 5];
+
+// const logMsg = (el) => {
+//   console.log(el);
+// };
+
+// array.forEach(logMsg);
+
+// const array = [1, 2, 3, 4, 5];
+
+// array.forEach((el, i) => {
+//   console.log(`Element with index ${i} is ${el}`);
+// });
+
+// function myFunc(arr) {
+//   const numberElements = arr.length;
+//   for (let i = 0; i < numberElements; i += 1) {
+//     console.log(`Element with index ${i} is ${arr[i]}`);
+//   }
+// }
+
+// myFunc(array);
+
+// const array = [1, 2, 3, 4, 5];
+// console.log(array); // [1, 2, 3, 4, 5]
+
+// const multiplication = (arr, value) => {
+//   let tempArr = [];
+//   for (let i = 0; i < arr.length; i += 1) {
+//     tempArr.push(arr[i] * value);
+//   }
+//   return tempArr;
+// };
+
+// const newArray = multiplication(array, 2);
+// console.log(array); // [1, 2, 3, 4, 5]
+// console.log(newArray); // [2, 4, 6, 8, 10]
+
+// const array1 = [1, 2, 3, 4, 5];
+// console.log(array1); // [1, 2, 3, 4, 5]
+
+// const array2 = array1.map((item) => item * 2);
+
+// console.log(array1); // [1, 2, 3, 4, 5]
+// console.log(array2); // [2, 4, 6, 8, 10]
+
+// const colors = ["Red", "Blue", "Yellow", "Orange"];
+// console.log(colors); // ["Red", "Blue", "Yellow", "Orange"]
+
+// const upperCaseColors = colors.map((el) => el.toUpperCase());
+
+// console.log(colors); // ["Red", "Blue", "Yellow", "Orange"]
+// console.log(upperCaseColors); // ['RED', 'BLUE', 'YELLOW', 'ORANGE']
+
+// const users = [
+//   { name: "Taras", surname: "Shevchenko" },
+//   { name: "Lesia", surname: "Ukrainka" },
+//   { name: "Ivan", surname: "Franko" },
+// ];
+
+// console.log(users); // object
+
+// const usersSurnames = users.map((el) => el.surname);
+// console.log(usersSurnames); // object
+
+// const users = [
+//   { name: "Alex", languages: ["ua", "en", "es"] },
+//   { name: "Mathew", languages: ["ua", "fr", "jp"] },
+//   { name: "Angelina", languages: ["fr", "en", "de", "it"] },
+// ];
+
+// const usersLanguages = users.flatMap((el) => el.languages);
+
+// console.log(usersLanguages);
+// // [['ua', 'en', 'es'], ['ua', 'fr', 'jp'], ['fr', 'en', 'de', 'it']]
+
+// const numbers = [-100, 50, 1000, 324, -43, 5, 865];
+// console.log(numbers); // [-100, 50, 1000, 324, -43, 5, 865];
+
+// // фільтруємо додатні числа
+// const positiveNumbers = numbers.filter((el) => el > 0);
+// console.log(positiveNumbers); // [50, 1000, 324, 5, 865]
+
+// // фільтруємо відʼємні числа
+// const negativeNumbers = numbers.filter((el) => el < 0);
+// console.log(negativeNumbers); // [-100, -43]
+
+// // вихідний масив не змінився
+// console.log(numbers); // [-100, 50, 1000, 324, -43, 5, 865];
+
+// const users = [
+//   { name: "Alex", languages: ["ua", "en", "es"] },
+//   { name: "Mathew", languages: ["ua", "fr", "jp"] },
+//   { name: "Angelina", languages: ["fr", "en", "de", "it"] },
+// ];
+
+// const usersLanguages = users.flatMap((el) => el.languages);
+
+// console.log(usersLanguages);
+// // ['ua', 'en', 'es', 'ua', 'fr', 'jp', 'fr', 'en', 'de', 'it']
+
+// const filteredUsersLanguages = usersLanguages.filter(
+//   (element, index, array) => array.indexOf(element) === index
+// );
+
+// console.log(filteredUsersLanguages); //['ua', 'en', 'es', 'fr', 'jp', 'de', 'it']
+
+// const people = [
+//   { name: "Alex", age: 18 },
+//   { name: "Max", age: 67 },
+//   { name: "Helga", age: 14 },
+//   { name: "Mathew", age: 36 },
+//   { name: "Angelina", age: 59 },
+//   { name: "Pablo", age: 7 },
+//   { name: "Paolina", age: 61 },
+// ];
+
+// const underage = people.filter((person) => person.age < 18);
+// console.log(underage);
+// // [{ name: "Helga", age: 14 }, { name: "Pablo", age: 7 }]
+
+// const middleage = people.filter(
+//   (person) => person.age >= 18 && person.age < 60
+// );
+// console.log(middleage);
+// // [{ name: "Alex", age: 18 }, { name: "Mathew", age: 36 }, { name: "Angelina", age: 59 }]
+
+// const pensioner = people.filter((person) => person.age >= 60);
+// console.log(pensioner);
+// // [{ name: "Max", age: 67 }, { name: "Paolina", age: 61 }]
+
+// const people = [
+//   { name: "Fritz", nationality: "German" },
+//   { name: "Marta", nationality: "Pole" },
+//   { name: "Jaque", nationality: "French" },
+//   { name: "Petro", nationality: "Ukrainian" },
+//   { name: "Harue", nationality: "Japanese" },
+// ];
+
+// const ukr = people.findIndex((el) => el.nationality === "Ukrainian");
+// console.log(ukr); // 3
+
+// const pl = people.findIndex((el) => el.nationality === "Pole");
+// console.log(pl); // 1
+
+// const ind = people.findIndex((el) => el.nationality === "Indian");
+// console.log(ind); // -1
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// // Перевірка чи є відʼємні числа
+// const negativeNumbers = numbers.some((el) => el < 0);
+// console.log(negativeNumbers); //false
+
+// // Перевірка чи є хоча б одне парне число
+// const evenNumbers = numbers.some((el) => el % 2 === 0);
+// console.log(evenNumbers); //true
+
+const users = [
+  { name: "Alex", age: 14 },
+  { name: "Max", age: 30 },
+  { name: "Andrew", age: 64 },
+];
+
+// Перевірка чи всі дорослі
+const alladults = users.every((el) => el.age >= 18);
+console.log(alladults); // false
+
+// Перевірка чи є діти
+const areChildren = users.some((el) => el.age < 18);
+console.log(areChildren); // true
