@@ -714,16 +714,142 @@
 // const evenNumbers = numbers.some((el) => el % 2 === 0);
 // console.log(evenNumbers); //true
 
-const users = [
-  { name: "Alex", age: 14 },
-  { name: "Max", age: 30 },
-  { name: "Andrew", age: 64 },
+// const users = [
+//   { name: "Alex", age: 14 },
+//   { name: "Max", age: 30 },
+//   { name: "Andrew", age: 64 },
+// ];
+
+// // Перевірка чи всі дорослі
+// const alladults = users.every((el) => el.age >= 18);
+// console.log(alladults); // false
+
+// // Перевірка чи є діти
+// const areChildren = users.some((el) => el.age < 18);
+// console.log(areChildren); // true
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// const summ = numbers.reduce((acum, el) => {
+//   return acum + el;
+// }, 0);
+
+// console.log(numbers); //[1, 2, 3, 4, 5];
+// console.log(summ); // 15
+
+// const people = [
+//   { name: "Alex", age: 18 },
+//   { name: "Max", age: 67 },
+//   { name: "Helga", age: 14 },
+//   { name: "Mathew", age: 36 },
+//   { name: "Angelina", age: 59 },
+//   { name: "Pablo", age: 7 },
+//   { name: "Paolina", age: 61 },
+// ];
+
+// // Визначаємо загальну кількість років на всіх
+// const totalAge = people.reduce((accum, el) => {
+//   return accum + el.age;
+// }, 0);
+
+// // Визначаємо середньоарифметичний вік користувачів
+// const averageAge = totalAge / people.length;
+// console.log(averageAge); //37.42857142857143
+
+// const users = [
+//   { name: "Alex", languages: ["ua", "en", "es"] },
+//   { name: "Mathew", languages: ["ua", "fr", "jp"] },
+//   { name: "Angelina", languages: ["fr", "en", "de", "it"] },
+// ];
+
+// const usersLanguages = users.reduce((accum, user) => {
+//   accum.push(...user.languages);
+//   return accum;
+// }, []);
+
+// console.log(usersLanguages);
+// // ['ua', 'en', 'es', 'ua', 'fr', 'jp', 'fr', 'en', 'de', 'it']
+
+// const numbers = [3, 7, 1, 9, 6, 10, 23, 70];
+// console.log("Вихідний масив: ", numbers);
+// //  [3, 7, 1, 9, 6, 10, 23, 70]
+
+// numbers.sort();
+
+// console.log("Вихідний масив після сортування:", numbers);
+// // [1, 10, 23, 3, 6, 7, 70, 9]
+
+// const people = ["Max", "Alex", "Helga", "Angelina", "Pablo"];
+// console.log("Вихідний масив: ", people);
+// // ['Max', 'Alex', 'Helga', 'Angelina', 'Pablo']
+
+// people.sort();
+
+// console.log("Вихідний масив після сортування:", people);
+// // ['Alex', 'Angelina', 'Helga', 'Max', 'Pablo']
+
+// const letters = ["b", "C", "d", "c", "A", "B", "D", "a"];
+// console.log("Вихідний масив: ", letters);
+// // ["b", "C", "d", "c", "A", "B", "D", "a"]
+
+// const sortedLetters = [...letters].sort();
+
+// console.log("Вихідний масив після сортування:", letters);
+// // ["b", "C", "d", "c", "A", "B", "D", "a"]
+
+// console.log("Новий відсортований масив:", sortedLetters);
+// // ['A', 'B', 'C', 'D', 'a', 'b', 'c', 'd']
+
+// const numbers = [3, 7, 1, 9, 6, 10, 23, 70];
+// console.log("Вихідний масив: ", numbers);
+// //  [3, 7, 1, 9, 6, 10, 23, 70]
+
+// numbers.sort((a, b) => b - a);
+
+// console.log("Вихідний масив після сортування:", numbers);
+// // [1, 10, 23, 3, 6, 7, 70, 9]
+
+// const letters = ["b", "C", "d", "c", "A", "B", "D", "a"];
+// console.log("Вихідний масив: ", letters);
+// // ["b", "C", "d", "c", "A", "B", "D", "a"]
+
+// letters.sort((a, b) => a.localeCompare(b));
+
+// console.log("Вихідний масив після сортування:", letters);
+// // ['a', 'A', 'b', 'B', 'c', 'C', 'd', 'D']
+
+// const people = ["Max", "Alex", "Helga", "Angelina", "Pablo"];
+// console.log("Вихідний масив: ", people);
+// // ['Max', 'Alex', 'Helga', 'Angelina', 'Pablo']
+
+// const alphabetSort = [...people].sort((a, b) => a.localeCompare(b));
+// const reverseSort = [...people].sort((a, b) => b.localeCompare(a));
+
+// console.log("Вихідний масив після сортування:", people);
+// // ['Max', 'Alex', 'Helga', 'Angelina', 'Pablo']
+
+// console.log("Алфавітне сортування:", alphabetSort);
+// // ['Alex', 'Angelina', 'Helga', 'Max', 'Pablo']
+
+// console.log("Реверсне сортування:", reverseSort);
+// // ['Pablo', 'Max', 'Helga', 'Angelina', 'Alex']
+
+const people = [
+  { name: "Alex", age: 18 },
+  { name: "Max", age: 67 },
+  { name: "Helga", age: 14 },
+  { name: "Mathew", age: 36 },
+  { name: "Angelina", age: 59 },
+  { name: "Pablo", age: 7 },
+  { name: "Paolina", age: 61 },
 ];
+console.log(people); // вихідний масив
 
-// Перевірка чи всі дорослі
-const alladults = users.every((el) => el.age >= 18);
-console.log(alladults); // false
+const olderPeople = [...people].sort((a, b) => a.age - b.age);
+console.log(olderPeople); // від молодших до старших
 
-// Перевірка чи є діти
-const areChildren = users.some((el) => el.age < 18);
-console.log(areChildren); // true
+const youngerPeople = [...people].sort((a, b) => b.age - a.age);
+console.log(youngerPeople); // від старших до молодших
+
+const alphabetPeople = [...people].sort((a, b) => a.name.localeCompare(b.name));
+console.log(alphabetPeople); // за алфавітом
