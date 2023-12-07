@@ -834,22 +834,75 @@
 // console.log("Реверсне сортування:", reverseSort);
 // // ['Pablo', 'Max', 'Helga', 'Angelina', 'Alex']
 
-const people = [
-  { name: "Alex", age: 18 },
-  { name: "Max", age: 67 },
-  { name: "Helga", age: 14 },
-  { name: "Mathew", age: 36 },
-  { name: "Angelina", age: 59 },
-  { name: "Pablo", age: 7 },
-  { name: "Paolina", age: 61 },
-];
-console.log(people); // вихідний масив
+// const people = [
+//   { name: "Alex", age: 18 },
+//   { name: "Max", age: 67 },
+//   { name: "Helga", age: 14 },
+//   { name: "Mathew", age: 36 },
+//   { name: "Angelina", age: 59 },
+//   { name: "Pablo", age: 7 },
+//   { name: "Paolina", age: 61 },
+// ];
+// console.log(people); // вихідний масив
 
-const olderPeople = [...people].sort((a, b) => a.age - b.age);
-console.log(olderPeople); // від молодших до старших
+// const olderPeople = [...people].sort((a, b) => a.age - b.age);
+// console.log(olderPeople); // від молодших до старших
 
-const youngerPeople = [...people].sort((a, b) => b.age - a.age);
-console.log(youngerPeople); // від старших до молодших
+// const youngerPeople = [...people].sort((a, b) => b.age - a.age);
+// console.log(youngerPeople); // від старших до молодших
 
-const alphabetPeople = [...people].sort((a, b) => a.name.localeCompare(b.name));
-console.log(alphabetPeople); // за алфавітом
+// const alphabetPeople = [...people].sort((a, b) => a.name.localeCompare(b.name));
+// console.log(alphabetPeople); // за алфавітом
+
+// const people = [
+//   {
+//     name: "Alex",
+//     age: 18,
+//     hobby: ["electronics", "programming", "sport", "gym"],
+//   },
+//   {
+//     name: "Max",
+//     age: 67,
+//     hobby: ["reading", "cinema"],
+//   },
+//   {
+//     name: "Helga",
+//     age: 14,
+//     hobby: ["sport", "gym", "dancing", "singing"],
+//   },
+//   {
+//     name: "Mathew",
+//     age: 36,
+//     hobby: ["singing", "sport", "swimming"],
+//   },
+// ];
+
+// const youngPeople = people.filter((el) => el.age < 20);
+
+// const hobbies = youngPeople.flatMap((el) => el.hobby);
+
+// const unicHobbies = hobbies.filter((el, id, arr) => arr.indexOf(el) === id);
+
+// const sortedUnicHobbies = [...unicHobbies].sort((a, b) => a.localeCompare(b));
+
+// console.log("people: ", people); // All users
+
+// console.log("youngPeople: ", youngPeople); //Users younger than 20yo
+
+// console.log("hobbies: ", hobbies);
+// // ['electronics', 'programming', 'sport', 'gym', 'sport', 'gym', 'dancing', 'singing']
+
+// console.log("unicHobbies: ", unicHobbies);
+// // ['electronics', 'programming', 'sport', 'gym', 'dancing', 'singing']
+
+// console.log("sortedUnicHobbies: ", sortedUnicHobbies);
+// // ["dancing", "electronics", "gym", "programming", "singing", "sport"];
+
+// // const sortedUnicHobbies = [...people]
+// //   .filter((el) => el.age < 20)
+// //   .flatMap((el) => el.hobby)
+// //   .filter((el, id, arr) => arr.indexOf(el) === id)
+// //   .sort((a, b) => a.localeCompare(b));
+
+// // console.log("sortedUnicHobbies: ", sortedUnicHobbies);
+// // // ["dancing", "electronics", "gym", "programming", "singing", "sport"];
